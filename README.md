@@ -1,0 +1,1 @@
+A rounding function that may sometimes give more accurate rounding results than the method taught in school.  It avoids cumulative errors.
