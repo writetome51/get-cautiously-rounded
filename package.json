@@ -1,6 +1,6 @@
 {
   "name": "@writetome51/get-cautiously-rounded",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "a rounding function that may sometimes give more accurate rounding results than the method taught in school.  It avoids cumulative errors",
   "main": "",
   "scripts": {
