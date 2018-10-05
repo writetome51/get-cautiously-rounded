@@ -3,7 +3,7 @@ import { getRightOfDecimal} from '@writetome51/get-right-of-decimal/getRightOfDe
 import { getRounded, getRoundedDown } 
 	from '@writetome51/get-rounded-up-down/getRounded_getRoundedDown_getRoundedUp';
 import {errorIfNotNumber} from 'basic-data-handling/errorIfNotNumber';
-
+import {isFloat} from 'basic-data-handling/isInteger_isFloat';
 
 
 // Rounds more accurately than getRounded() when the number being rounded has just one
@@ -15,14 +15,18 @@ import {errorIfNotNumber} from 'basic-data-handling/errorIfNotNumber';
 
 export function getCautiouslyRounded(num): number {
 	errorIfNotNumber(num);
-	let integerPart = num >> 0;
-	let decimalPart: string = getRightOfDecimal(num);
 
-	if (decimalPart === '5' && isOdd(integerPart) && integerPart < 0) {
-		return getRoundedDown(num);
+	if (isFloat(num)){
+		let integerPart = num >> 0;
+		let decimalPart: string = getRightOfDecimal(num);
+
+		if (decimalPart === '5' && isOdd(integerPart) && integerPart < 0) {
+			return getRoundedDown(num);
+		}
+		else if (decimalPart === '5' && isEven(integerPart)) {
+			return integerPart;
+		}
+		else return getRounded(num);
 	}
-	else if (decimalPart === '5' && isEven(integerPart)) {
-		return integerPart;
-	}
-	else return getRounded(num);
+	else return num;
 }

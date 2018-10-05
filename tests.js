@@ -55,27 +55,45 @@ if (num === 2)
     console.log('test 9 passed');
 else
     console.log('test 9 failed');
-// Test 10, should trigger error:
-var errorTriggered = false;
-try {
-    num = getCautiouslyRounded_1.getCautiouslyRounded(1);
-}
-catch (e) {
-    errorTriggered = true;
-}
-if (errorTriggered)
+// Test 10
+num = getCautiouslyRounded_1.getCautiouslyRounded(0);
+if (num === 0)
     console.log('test 10 passed');
 else
     console.log('test 10 failed');
-// Test 11, should trigger error:
-errorTriggered = false;
-try {
-    num = getCautiouslyRounded_1.getCautiouslyRounded(Number.MAX_VALUE);
-}
-catch (e) {
-    errorTriggered = true;
-}
-if (errorTriggered)
+// Test 11
+num = getCautiouslyRounded_1.getCautiouslyRounded(2);
+if (num === 2)
     console.log('test 11 passed');
 else
     console.log('test 11 failed');
+// Test 12
+num = getCautiouslyRounded_1.getCautiouslyRounded(-2);
+if (num === -2)
+    console.log('test 12 passed');
+else
+    console.log('test 12 failed');
+// Test 13
+num = getCautiouslyRounded_1.getCautiouslyRounded(-2.88);
+if (num === -3)
+    console.log('test 13 passed');
+else
+    console.log('test 13 failed');
+// Test 14
+num = getCautiouslyRounded_1.getCautiouslyRounded(2.88);
+if (num === 3)
+    console.log('test 14 passed');
+else
+    console.log('test 14 failed');
+// Test 15
+num = getCautiouslyRounded_1.getCautiouslyRounded(3.88);
+if (num === 4)
+    console.log('test 15 passed');
+else
+    console.log('test 15 failed');
+// Test 16
+num = getCautiouslyRounded_1.getCautiouslyRounded(-3.88);
+if (num === -4)
+    console.log('test 16 passed');
+else
+    console.log('test 16 failed');
