@@ -1,9 +1,8 @@
-import { isEven, isOdd } from '@writetome51/number-analysis-basic/isOdd_isEven';
-import { getRightOfDecimal} from '@writetome51/get-right-of-decimal/getRightOfDecimal';
-import { getRounded, getRoundedDown } 
-	from '@writetome51/get-rounded-up-down/getRounded_getRoundedDown_getRoundedUp';
-import {errorIfNotNumber} from 'basic-data-handling/errorIfNotNumber';
-import {isFloat} from 'basic-data-handling/isInteger_isFloat';
+import { errorIfNotNumber } from 'basic-data-handling/errorIfNotNumber';
+import { isFloat } from 'basic-data-handling/isInteger_isFloat';
+import { isEven, isOdd } from '@writetome51/is-odd-is-even';
+import { getRightOfDecimal } from '@writetome51/get-right-of-decimal';
+import { getRounded, getRoundedDown } from '@writetome51/get-rounded-up-down';
 
 
 // Rounds more accurately than getRounded() when the number being rounded has just one
@@ -16,7 +15,7 @@ import {isFloat} from 'basic-data-handling/isInteger_isFloat';
 export function getCautiouslyRounded(num): number {
 	errorIfNotNumber(num);
 
-	if (isFloat(num)){
+	if (isFloat(num)) {
 		let integerPart = num >> 0;
 		let decimalPart: string = getRightOfDecimal(num);
 
