@@ -1,4 +1,4 @@
-import { getCautiouslyRounded } from './getCautiouslyRounded';
+import { getCautiouslyRounded } from './index';
 
 
 // Test 1
