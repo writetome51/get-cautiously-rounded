@@ -1,8 +1,9 @@
-import { errorIfNotNumber } from 'basic-data-handling/errorIfNotNumber';
-import { isFloat } from 'basic-data-handling/isInteger_isFloat';
-import { isEven, isOdd } from '@writetome51/is-odd-is-even';
+import { errorIfNotFiniteNumber } from 'error-if-not-finite-number';
+import { getLeftOfDecimal } from '@writetome51/get-left-of-decimal';
 import { getRightOfDecimal } from '@writetome51/get-right-of-decimal';
 import { getRounded, getRoundedDown } from '@writetome51/get-rounded-up-down';
+import { isInteger } from '@writetome51/is-integer-is-float';
+import { isEven, isOdd } from '@writetome51/is-odd-is-even';
 
 
 // Rounds more accurately than getRounded() when the number being rounded has just one
@@ -13,19 +14,14 @@ import { getRounded, getRoundedDown } from '@writetome51/get-rounded-up-down';
 // If num's whole number is odd, and fraction is .5, num is rounded away from zero.
 
 export function getCautiouslyRounded(num): number {
-	errorIfNotNumber(num);
 
-	if (isFloat(num)) {
-		let integerPart = num >> 0;
-		let decimalPart: string = getRightOfDecimal(num);
+	errorIfNotFiniteNumber(num);
+	if (isInteger(num)) return num;
 
-		if (decimalPart === '5' && isOdd(integerPart) && integerPart < 0) {
-			return getRoundedDown(num);
-		}
-		else if (decimalPart === '5' && isEven(integerPart)) {
-			return integerPart;
-		}
-		else return getRounded(num);
-	}
-	else return num;
+	let integerPart = getLeftOfDecimal(num);
+	let decimalPart: string = getRightOfDecimal(num);
+
+	if (decimalPart === '5' && isOdd(integerPart) && integerPart < 0) return getRoundedDown(num);
+	else if (decimalPart === '5' && isEven(integerPart)) return integerPart;
+	else return getRounded(num);
 }
