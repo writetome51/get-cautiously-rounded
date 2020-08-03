@@ -14,7 +14,6 @@ import { isEven, isOdd } from '@writetome51/is-odd-is-even';
 // If num's whole number is odd, and fraction is .5, num is rounded away from zero.
 
 export function getCautiouslyRounded(num): number {
-
 	errorIfNotFiniteNumber(num);
 	if (isInteger(num)) return num;
 

@@ -1,7 +1,8 @@
 {
   "name": "@writetome51/get-cautiously-rounded",
-  "version": "1.0.7",
+  "version": "2.0.0",
   "description": "a rounding function that may give more accurate rounding results than the method taught in school.  It avoids cumulative errors",
+  "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -28,11 +29,11 @@
   },
   "homepage": "https://github.com/writetome51/get-cautiously-rounded#readme",
   "dependencies": {
-    "error-if-not-finite-number": "~1.0.0",
-    "@writetome51/is-integer-is-float": "~1.0.0",
-    "@writetome51/is-odd-is-even": "~1.0.3",
-    "@writetome51/get-right-of-decimal": "~1.0.5",
-    "@writetome51/get-rounded-up-down": "~1.0.10",
-    "@writetome51/get-left-of-decimal": "~1.0.5"
+    "error-if-not-finite-number": "^2.0.0",
+    "@writetome51/is-integer-is-float": "^2.0.0",
+    "@writetome51/is-odd-is-even": "^2.0.0",
+    "@writetome51/get-right-of-decimal": "^2.0.0",
+    "@writetome51/get-rounded-up-down": "^2.0.0",
+    "@writetome51/get-left-of-decimal": "^2.0.0"
   }
 }
