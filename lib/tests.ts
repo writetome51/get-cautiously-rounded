@@ -1,4 +1,4 @@
-import { getCautiouslyRounded } from './index';
+import { getCautiouslyRounded } from './index.ts';
 
 
 // Test 1

@@ -1,4 +1,4 @@
-import { getCautiouslyRounded } from './index';
+import { getCautiouslyRounded } from './index.js';
 // Test 1
 let num = getCautiouslyRounded(0.2);
 if (num === 0)
